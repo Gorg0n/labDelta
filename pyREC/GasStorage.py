@@ -2,7 +2,7 @@ from AuxiliaryComponent import AuxiliaryComponent
 from Constants import *
 import numpy as np
 
-
+#pycharm
 class GasStorage(AuxiliaryComponent):
     def __init__(self, id, capacity,
                  pressure_max, replacement_year, replacement_cost, tech='GasStorage'):
