@@ -13,9 +13,9 @@ from scipy.interpolate import interp1d
 
 time = 1
 
-data_meteo = pd.read_csv('Inputdelta/DataMeteo/datimeteo.csv', delimiter=',')
+data_meteo = pd.read_csv('Inputdelta/Datimeteo/datimeteonew.csv', delimiter=',')
 
-load_el = pd.read_csv('Inputdelta/user_1h_kW_el.csv', delimiter=';')
+load_el = pd.read_csv('Inputdelta/Copia_user_1h_kW_el.csv', delimiter=';')
 
 school = User(id='school', dem=load_el['school'], pod='None', group='public institute',
               plants='pv1', carrier=['electricity'])
@@ -35,7 +35,7 @@ pv1 = PvPanels(id='pv1', pod=None, ma=None, ts=None, tech='pv', user='school', s
                isc_ref=9.48,
                voc_ref=46.1, t_cell_ref_c=25, I_tot_ref=1000,
                vmppt_ref=37.0, imppt_ref=8.84, mu_isc_ref=0.04,
-               mu_voc_ref=0.24, ser_cell=72, t_cell_noct_c=46, area=1.95, n_series=20, n_parallel=20,
+               mu_voc_ref=0.30, ser_cell=72, t_cell_noct_c=46, area=1.95, n_series=20, n_parallel=20,
                carrier='electricity', dur_inc_kWh=0, inc_kWh=0, inc_kW=0, aux_components=[inverter1], oem_cost_kWh=0)
 
 pv1.compute_output(slope=15, theta=None, I_beam=data_meteo['I_beam [W/m2]'], I_skydiff=data_meteo['I_skydiff [W/m2]'],
